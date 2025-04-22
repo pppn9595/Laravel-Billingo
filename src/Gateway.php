@@ -137,7 +137,7 @@ class Gateway
 
         $signature['jti'] = md5($signature['sub'].$signature['iat']);
 
-        return JWT::encode($signature, $this->privateKey);
+        return JWT::encode($signature, $this->privateKey, 'HS256');
     }
 
     /**
